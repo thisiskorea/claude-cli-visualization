@@ -1,0 +1,24 @@
+{
+  "name": "@claude-viz/mcp-server",
+  "version": "0.1.0",
+  "description": "MCP Server for Claude CLI Visualization",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "claude-viz-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "@claude-viz/shared": "workspace:*",
+    "@claude-viz/daemon": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  }
+}

@@ -18,7 +18,23 @@
 
 ## 🚀 Quick Start
 
-### One-Line Install
+### Method 1: Claude CLI Plugin (Easiest!)
+
+Add to your `~/.claude/config.json`:
+```json
+{
+  "mcpServers": {
+    "claude-viz": {
+      "command": "npx",
+      "args": ["-y", "@claude-viz/mcp-server"]
+    }
+  }
+}
+```
+
+Then ask Claude: *"Start my visualization daemon"*
+
+### Method 2: One-Line Install
 
 **Linux / macOS:**
 ```bash
@@ -30,7 +46,7 @@ curl -fsSL https://raw.githubusercontent.com/thisiskorea/claude-cli-visualizatio
 iwr -useb https://raw.githubusercontent.com/thisiskorea/claude-cli-visualization/main/install.ps1 | iex
 ```
 
-### Or use npm (when published)
+### Method 3: npm Install
 
 ```bash
 # Install globally

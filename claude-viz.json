@@ -1,0 +1,80 @@
+{
+  "$schema": "https://github.com/anthropics/claude-code/blob/main/schemas/mcp-server.schema.json",
+  "name": "claude-viz",
+  "version": "0.1.0",
+  "description": "Visualize and analyze your Claude CLI sessions with beautiful insights",
+  "author": "Claude CLI Community",
+  "license": "MIT",
+  "homepage": "https://github.com/thisiskorea/claude-cli-visualization",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thisiskorea/claude-cli-visualization.git"
+  },
+  "keywords": [
+    "claude",
+    "cli",
+    "visualization",
+    "analytics",
+    "monitoring",
+    "mcp"
+  ],
+  "mcpServers": {
+    "claude-viz": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@claude-viz/mcp-server"
+      ],
+      "env": {}
+    }
+  },
+  "installation": {
+    "npm": "npm install -g claude-cli-viz",
+    "script": "curl -fsSL https://raw.githubusercontent.com/thisiskorea/claude-cli-visualization/main/install.sh | bash"
+  },
+  "features": [
+    "Real-time session tracking",
+    "Tool usage analytics",
+    "Token and cost tracking",
+    "File change visualization",
+    "Timeline view",
+    "Export sessions (HTML/JSON/Markdown)",
+    "Lightweight hook-based monitoring"
+  ],
+  "tools": [
+    {
+      "name": "claude_viz_start",
+      "description": "Start the visualization daemon"
+    },
+    {
+      "name": "claude_viz_stop",
+      "description": "Stop the daemon"
+    },
+    {
+      "name": "claude_viz_status",
+      "description": "Check daemon status"
+    },
+    {
+      "name": "claude_viz_get_sessions",
+      "description": "Get list of sessions"
+    },
+    {
+      "name": "claude_viz_export_session",
+      "description": "Export a session"
+    },
+    {
+      "name": "claude_viz_view",
+      "description": "Get viewer URL"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "claude-viz://sessions",
+      "name": "Recent Sessions"
+    },
+    {
+      "uri": "claude-viz://config",
+      "name": "Configuration"
+    }
+  ]
+}

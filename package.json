@@ -4,7 +4,8 @@
   "private": true,
   "description": "Visualize and share Claude CLI sessions with beautiful insights",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "mcp-server"
   ],
   "scripts": {
     "build": "turbo run build",
