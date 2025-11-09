@@ -1,0 +1,28 @@
+{
+  "name": "claude-cli-viz",
+  "version": "0.1.0",
+  "description": "CLI tool for visualizing Claude CLI sessions",
+  "main": "dist/index.js",
+  "bin": {
+    "claude-viz": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@claude-viz/shared": "workspace:*",
+    "@claude-viz/daemon": "workspace:*",
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

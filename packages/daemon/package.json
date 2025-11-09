@@ -1,0 +1,31 @@
+{
+  "name": "@claude-viz/daemon",
+  "version": "0.1.0",
+  "description": "Background daemon for collecting and storing Claude CLI data",
+  "main": "dist/index.js",
+  "bin": {
+    "claude-viz-daemon": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@claude-viz/shared": "workspace:*",
+    "better-sqlite3": "^9.2.2",
+    "chokidar": "^3.5.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.3.3"
+  }
+}
