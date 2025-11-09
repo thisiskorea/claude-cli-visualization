@@ -18,10 +18,31 @@
 
 ## 🚀 Quick Start
 
+### One-Line Install
+
+**Linux / macOS:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/thisiskorea/claude-cli-visualization/main/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+iwr -useb https://raw.githubusercontent.com/thisiskorea/claude-cli-visualization/main/install.ps1 | iex
+```
+
+### Or use npm (when published)
+
 ```bash
 # Install globally
 npm install -g claude-cli-viz
 
+# Or use npx (no installation needed)
+npx claude-cli-viz init
+```
+
+### Quick Setup
+
+```bash
 # Initialize (sets up Claude CLI hooks)
 claude-viz init
 
