@@ -7,7 +7,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@claude-viz/shared': path.resolve(__dirname, '../shared/src/index.ts'),
     },
+  },
+  optimizeDeps: {
+    include: ['@claude-viz/shared'],
   },
   server: {
     port: 3000,

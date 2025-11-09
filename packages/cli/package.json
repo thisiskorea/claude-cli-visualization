@@ -13,8 +13,8 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@claude-viz/shared": "workspace:*",
-    "@claude-viz/daemon": "workspace:*",
+    "@claude-viz/shared": "*",
+    "@claude-viz/daemon": "*",
     "commander": "^11.1.0",
     "chalk": "^4.1.2",
     "ora": "^5.4.1"

@@ -13,7 +13,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@claude-viz/shared": "workspace:*",
+    "@claude-viz/shared": "*",
     "better-sqlite3": "^9.2.2",
     "chokidar": "^3.5.3",
     "cors": "^2.8.5",

@@ -11,7 +11,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@claude-viz/shared": "workspace:*"
+    "@claude-viz/shared": "*"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",

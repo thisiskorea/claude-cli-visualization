@@ -13,7 +13,7 @@ class ApiClient {
     if (!response.ok) {
       throw new Error(`API error: ${response.statusText}`);
     }
-    return response.json();
+    return response.json() as Promise<T>;
   }
 
   async getSession(id: string) {

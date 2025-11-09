@@ -54,6 +54,8 @@ export function useSession(sessionId: string | undefined) {
     let mounted = true;
 
     async function load() {
+      if (!sessionId) return;
+
       try {
         const [sessionData, statsData, messagesData, toolsData, filesData] = await Promise.all([
           apiClient.getSession(sessionId),

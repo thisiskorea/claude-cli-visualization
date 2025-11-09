@@ -14,6 +14,8 @@ import {
   ListToolsRequestSchema,
   ListResourcesRequestSchema,
   ReadResourceRequestSchema,
+  CallToolResult,
+  TextContent,
 } from '@modelcontextprotocol/sdk/types.js';
 import { spawn } from 'child_process';
 import { promises as fs } from 'fs';
@@ -234,7 +236,7 @@ server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
  * Tool implementations
  */
 
-async function startDaemon(port: number) {
+async function startDaemon(port: number): Promise<CallToolResult> {
   return new Promise((resolve) => {
     const child = spawn('claude-viz', ['start'], {
       detached: true,
@@ -257,7 +259,7 @@ async function startDaemon(port: number) {
   });
 }
 
-async function stopDaemon() {
+async function stopDaemon(): Promise<CallToolResult> {
   return new Promise((resolve) => {
     const child = spawn('claude-viz', ['stop'], {
       stdio: 'pipe',
@@ -281,7 +283,7 @@ async function stopDaemon() {
   });
 }
 
-async function getStatus() {
+async function getStatus(): Promise<CallToolResult> {
   return new Promise((resolve) => {
     const child = spawn('claude-viz', ['status'], {
       stdio: 'pipe',
@@ -305,7 +307,7 @@ async function getStatus() {
   });
 }
 
-async function getSessions(limit: number) {
+async function getSessions(limit: number): Promise<CallToolResult> {
   // This would call the daemon API
   // For now, return mock data
   return {
@@ -325,7 +327,7 @@ async function getSessions(limit: number) {
   };
 }
 
-async function exportSession(sessionId: string, format?: string, outputPath?: string) {
+async function exportSession(sessionId: string, format?: string, outputPath?: string): Promise<CallToolResult> {
   return new Promise((resolve) => {
     const args = ['export', sessionId];
     if (format) args.push('-f', format);
@@ -353,7 +355,7 @@ async function exportSession(sessionId: string, format?: string, outputPath?: st
   });
 }
 
-async function getViewUrl() {
+async function getViewUrl(): Promise<CallToolResult> {
   return {
     content: [
       {
