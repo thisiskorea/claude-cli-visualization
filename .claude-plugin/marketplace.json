@@ -1,0 +1,37 @@
+{
+  "name": "claude-cli-visualization",
+  "owner": {
+    "name": "Claude CLI Visualization",
+    "email": "support@claude-viz.dev"
+  },
+  "metadata": {
+    "description": "Visualize, analyze, and share your Claude CLI sessions with beautiful insights",
+    "version": "0.1.0",
+    "homepage": "https://github.com/thisiskorea/claude-cli-visualization"
+  },
+  "plugins": [
+    {
+      "name": "claude-viz",
+      "source": "./plugin",
+      "description": "Complete Claude CLI session visualization and analytics platform with real-time monitoring, tool usage stats, and export capabilities",
+      "version": "0.1.0",
+      "author": {
+        "name": "Claude CLI Community",
+        "url": "https://github.com/thisiskorea/claude-cli-visualization"
+      },
+      "category": "Development Engineering",
+      "homepage": "https://github.com/thisiskorea/claude-cli-visualization",
+      "keywords": [
+        "visualization",
+        "analytics",
+        "monitoring",
+        "session",
+        "tools",
+        "statistics",
+        "export",
+        "timeline",
+        "dashboard"
+      ]
+    }
+  ]
+}

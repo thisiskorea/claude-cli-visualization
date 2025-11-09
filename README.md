@@ -18,7 +18,21 @@
 
 ## 🚀 Quick Start
 
-### Method 1: Claude CLI Plugin (Easiest!)
+### Method 1: Plugin Marketplace (Easiest!)
+
+```bash
+# In Claude Code, add marketplace and install
+/plugin marketplace add thisiskorea/claude-cli-visualization
+/plugin install claude-viz
+
+# Then use slash commands
+/viz-start
+/viz-view
+```
+
+Or ask Claude: *"Start my visualization daemon"*
+
+### Method 2: Manual MCP Setup
 
 Add to your `~/.claude/config.json`:
 ```json
@@ -31,8 +45,6 @@ Add to your `~/.claude/config.json`:
   }
 }
 ```
-
-Then ask Claude: *"Start my visualization daemon"*
 
 ### Method 2: One-Line Install
 

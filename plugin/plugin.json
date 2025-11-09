@@ -1,0 +1,74 @@
+{
+  "name": "claude-viz",
+  "version": "0.1.0",
+  "description": "Visualize and analyze your Claude CLI sessions",
+  "author": {
+    "name": "Claude CLI Community",
+    "url": "https://github.com/thisiskorea/claude-cli-visualization"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/thisiskorea/claude-cli-visualization",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thisiskorea/claude-cli-visualization.git"
+  },
+  "keywords": [
+    "visualization",
+    "analytics",
+    "monitoring"
+  ],
+  "mcpServers": {
+    "claude-viz": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@claude-viz/mcp-server"
+      ]
+    }
+  },
+  "slashCommands": {
+    "viz-start": {
+      "description": "Start the visualization daemon",
+      "script": "npx claude-cli-viz start"
+    },
+    "viz-stop": {
+      "description": "Stop the visualization daemon",
+      "script": "npx claude-cli-viz stop"
+    },
+    "viz-status": {
+      "description": "Check visualization daemon status",
+      "script": "npx claude-cli-viz status"
+    },
+    "viz-view": {
+      "description": "Open visualization web viewer",
+      "script": "npx claude-cli-viz view"
+    },
+    "viz-export": {
+      "description": "Export a session (usage: /viz-export <session-id> [format])",
+      "script": "npx claude-cli-viz export \"$@\""
+    }
+  },
+  "hooks": {
+    "tool-use": {
+      "command": "node",
+      "args": [
+        "-e",
+        "require('@claude-viz/hooks')"
+      ]
+    }
+  },
+  "installation": {
+    "message": "Installing Claude CLI Visualization...",
+    "steps": [
+      {
+        "name": "Install npm package",
+        "command": "npm install -g claude-cli-viz"
+      },
+      {
+        "name": "Initialize hooks",
+        "command": "claude-viz init"
+      }
+    ],
+    "postInstall": "✅ Claude Visualization installed! Use /viz-start to begin."
+  }
+}
