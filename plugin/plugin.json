@@ -27,5 +27,20 @@
     "./commands/viz-export.md"
   ],
   "mcpServers": "./mcp-config.json",
-  "hooks": "./hooks-config.json"
+  "hooks": "./hooks-config.json",
+  "installation": {
+    "preInstall": "⚠️  This plugin requires claude-cli-viz to be installed first.\n\nInstall with: curl -fsSL https://raw.githubusercontent.com/thisiskorea/claude-cli-visualization/main/install.sh | bash",
+    "steps": [
+      {
+        "name": "Verify claude-cli-viz installation",
+        "command": "command -v claude-viz || (echo 'Installing claude-cli-viz...' && npm install -g claude-cli-viz)",
+        "description": "Checking prerequisites..."
+      }
+    ],
+    "postInstall": "✅ Claude Visualization plugin installed!\n\nQuick Start:\n  /viz-start    - Start daemon\n  /viz-view     - Open viewer\n  /viz-status   - Check status\n\nOr ask Claude: 'Start my visualization daemon'"
+  },
+  "requirements": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
 }

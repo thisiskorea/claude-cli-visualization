@@ -6,7 +6,13 @@ description: Open the visualization web viewer in browser
 
 Open the web interface to view and analyze Claude CLI sessions.
 
-## Instructions
+## Prerequisites Check
+
+First, verify that claude-viz is installed.
+
+If not installed, show installation instructions.
+
+## If Installed
 
 1. Check if the daemon is running using `claude-viz status`
 2. If not running, inform the user to run `/viz-start` first

@@ -13,7 +13,13 @@ args:
 
 Export a Claude CLI session for sharing or archival.
 
-## Instructions
+## Prerequisites Check
+
+First, verify that claude-viz is installed.
+
+If not installed, show installation instructions.
+
+## If Installed
 
 Use the provided arguments:
 - session_id: $ARGUMENTS[0] (required)

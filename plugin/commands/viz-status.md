@@ -6,7 +6,17 @@ description: Check visualization daemon status and statistics
 
 Display the current status of the visualization daemon and session statistics.
 
-## Instructions
+## Prerequisites Check
+
+First, verify that claude-viz is installed:
+
+```bash
+which claude-viz
+```
+
+If not found, show installation instructions (see viz-start.md).
+
+## If Installed
 
 1. Execute: `claude-viz status`
 2. Parse and display the output including:

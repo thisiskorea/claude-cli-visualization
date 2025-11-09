@@ -2,9 +2,33 @@
 
 Visualize, analyze, and share your Claude CLI sessions with beautiful insights.
 
+## ⚠️ Prerequisites
+
+This plugin requires `claude-cli-viz` to be installed on your system.
+
+### Install Prerequisites First
+
+**Option 1: One-line installer (Recommended)**
+```bash
+curl -fsSL https://raw.githubusercontent.com/thisiskorea/claude-cli-visualization/main/install.sh | bash
+```
+
+**Option 2: npm global install**
+```bash
+npm install -g claude-cli-viz
+```
+
+**Option 3: Manual installation**
+```bash
+git clone https://github.com/thisiskorea/claude-cli-visualization.git
+cd claude-cli-visualization
+npm install && npm run build
+cd packages/cli && npm link
+```
+
 ## Installation
 
-### Option 1: From Marketplace (Recommended)
+After installing the prerequisites:
 
 ```bash
 # Add marketplace
@@ -14,12 +38,10 @@ Visualize, analyze, and share your Claude CLI sessions with beautiful insights.
 /plugin install claude-viz
 ```
 
-### Option 2: Direct Install
-
-```bash
-npm install -g claude-cli-viz
-claude-viz init
-```
+The plugin will:
+1. Verify claude-cli-viz is installed
+2. Set up integration with Claude Code
+3. Enable slash commands and MCP tools
 
 ## Features
 
@@ -64,17 +86,20 @@ Once installed, you can ask Claude:
 ## Quick Start
 
 ```bash
-# 1. Install via marketplace
+# 1. Install prerequisites
+curl -fsSL https://raw.githubusercontent.com/thisiskorea/claude-cli-visualization/main/install.sh | bash
+
+# 2. Install plugin
 /plugin marketplace add thisiskorea/claude-cli-visualization
 /plugin install claude-viz
 
-# 2. Start daemon
+# 3. Start daemon
 /viz-start
 
-# 3. Open viewer
+# 4. Open viewer
 /viz-view
 
-# 4. Use Claude CLI normally - all sessions are tracked!
+# 5. Use Claude CLI normally - all sessions are tracked!
 ```
 
 ## Web Interface
@@ -113,6 +138,10 @@ Config file: `~/.claude-viz/config.json`
 
 ## Troubleshooting
 
+### "claude-viz: command not found"
+
+The prerequisite package is not installed. Install it using one of the methods above.
+
 ### Daemon won't start
 
 ```bash
@@ -121,6 +150,9 @@ Config file: `~/.claude-viz/config.json`
 
 # Check logs
 tail -f ~/.claude-viz/daemon.log
+
+# Try manual start
+claude-viz start -f
 ```
 
 ### MCP tools not available
@@ -137,6 +169,12 @@ Ensure the MCP server is configured in your Claude config:
   }
 }
 ```
+
+### Slash commands don't work
+
+1. Restart Claude Code after installation
+2. Verify plugin is installed: `/plugin list`
+3. Update marketplace: `/plugin marketplace update`
 
 ## Links
 
