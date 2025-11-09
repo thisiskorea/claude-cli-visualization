@@ -1,0 +1,10 @@
+{
+  "claude-viz": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "@claude-viz/mcp-server"
+    ],
+    "env": {}
+  }
+}

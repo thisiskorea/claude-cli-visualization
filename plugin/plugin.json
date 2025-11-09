@@ -15,60 +15,17 @@
   "keywords": [
     "visualization",
     "analytics",
-    "monitoring"
+    "monitoring",
+    "sessions",
+    "tools"
   ],
-  "mcpServers": {
-    "claude-viz": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@claude-viz/mcp-server"
-      ]
-    }
-  },
-  "slashCommands": {
-    "viz-start": {
-      "description": "Start the visualization daemon",
-      "script": "npx claude-cli-viz start"
-    },
-    "viz-stop": {
-      "description": "Stop the visualization daemon",
-      "script": "npx claude-cli-viz stop"
-    },
-    "viz-status": {
-      "description": "Check visualization daemon status",
-      "script": "npx claude-cli-viz status"
-    },
-    "viz-view": {
-      "description": "Open visualization web viewer",
-      "script": "npx claude-cli-viz view"
-    },
-    "viz-export": {
-      "description": "Export a session (usage: /viz-export <session-id> [format])",
-      "script": "npx claude-cli-viz export \"$@\""
-    }
-  },
-  "hooks": {
-    "tool-use": {
-      "command": "node",
-      "args": [
-        "-e",
-        "require('@claude-viz/hooks')"
-      ]
-    }
-  },
-  "installation": {
-    "message": "Installing Claude CLI Visualization...",
-    "steps": [
-      {
-        "name": "Install npm package",
-        "command": "npm install -g claude-cli-viz"
-      },
-      {
-        "name": "Initialize hooks",
-        "command": "claude-viz init"
-      }
-    ],
-    "postInstall": "✅ Claude Visualization installed! Use /viz-start to begin."
-  }
+  "commands": [
+    "./commands/viz-start.md",
+    "./commands/viz-stop.md",
+    "./commands/viz-status.md",
+    "./commands/viz-view.md",
+    "./commands/viz-export.md"
+  ],
+  "mcpServers": "./mcp-config.json",
+  "hooks": "./hooks-config.json"
 }

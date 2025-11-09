@@ -1,0 +1,18 @@
+{
+  "tool-use": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "claude-viz-hook",
+      "tool-use"
+    ]
+  },
+  "prompt-submit": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "claude-viz-hook",
+      "prompt-submit"
+    ]
+  }
+}
